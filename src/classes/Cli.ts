@@ -181,8 +181,8 @@ class Cli {
           answers.color,
           answers.make,
           answers.model,
-          parseInt(answers.year),
           parseInt(answers.weight),
+          parseInt(answers.year),
           parseInt(answers.topSpeed),
           [],
           parseInt(answers.towingCapacity)
