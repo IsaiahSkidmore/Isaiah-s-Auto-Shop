@@ -2,7 +2,7 @@
 # Isaiah's Auto Shop ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 ## Description
-Isaiah's Auto Shop is a terminal-based simulation game where players can create and interact with various types of vehicles, including cars, trucks, and motorbikes. Players can customize their vehicles, perform actions like starting, accelerating, turning, and even perform special actions like towing with a truck or doing a wheeling on a motorbike!
+Isaiah's Auto Shop is a terminal-based simulation game where players can create and interact with various types of vehicles, including cars, trucks, and motorbikes. Players can customize their vehicles, and perform actions like starting the engine, accelerating, turning, and even perform special actions like towing with a truck or doing a wheeling on a motorbike!
 
 ## Table of Contents
 - [Installation](#installation)
