@@ -3,6 +3,7 @@ import inquirer from "inquirer";
 import Truck from "./Truck.js";
 import Car from "./Car.js";
 import Motorbike from "./Motorbike.js";
+import Wheel from "./Wheel.js";
 // define the Cli class
 class Cli {
     // TODO: Update the constructor to accept Truck and Motorbike objects as well
@@ -223,6 +224,10 @@ class Cli {
             // TODO: push the motorbike to the vehicles array
             // TODO: set the selectedVehicleVin to the vin of the motorbike
             // TODO: perform actions on the motorbike
+            const motorbike = new Motorbike(Cli.generateVin(), answers.color, answers.make, answers.model, parseInt(answers.year), parseInt(answers.weight), parseInt(answers.topSpeed), [new Wheel(parseInt(answers.frontWheelDiameter), answers.frontWheelBrand), new Wheel(parseInt(answers.rearWheelDiameter), answers.rearWheelBrand)]);
+            this.vehicles.push(motorbike);
+            this.selectedVehicleVin = motorbike.vin;
+            this.performActions();
         });
     }
     // method to find a vehicle to tow
@@ -244,6 +249,15 @@ class Cli {
         ])
             .then((answers) => {
             // TODO: check if the selected vehicle is the truck
+            if (p0?.vin === answers.vehicleToTow.vin) {
+                console.log('Truck cannot tow itself');
+                this.performActions();
+                return;
+            }
+            else {
+                p0?.tow(answers.vehicleToTow);
+                this.performActions();
+            }
             // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
             // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
         });
